@@ -12,6 +12,11 @@ COPY template   template
 COPY provider   provider
 COPY main.go    .
 
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
+
+RUN go get github.com/openfaas/faas-provider/auth
+
 RUN go test -v \
     && go build -o /usr/bin/edge-auth .
 

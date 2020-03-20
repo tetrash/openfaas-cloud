@@ -15,3 +15,4 @@ install:
 script:
 - docker buildx build --progress plain --platform=linux/amd64,linux/arm64,linux/arm/v7 -t tetrash/openfaas-edge-auth-multiarch:$TAG --push ./edge-auth
 - docker buildx build --progress plain --platform=linux/amd64,linux/arm64,linux/arm/v7 -t tetrash/openfaas-edge-router-multiarch:$TAG --push ./edge-router
+- docker buildx build --progress plain --platform=linux/amd64,linux/arm64,linux/arm/v7 -t tetrash/openfaas-of-builder-multiarch:$TAG --push ./of-builder
